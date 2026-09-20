@@ -3,38 +3,263 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maki Works</title>
-  <meta http-equiv="refresh" content="0;url=https://x.com/makideveloper">
-  <link rel="canonical" href="https://x.com/makideveloper">
-  <script>
-    window.location.href = "https://x.com/makideveloper";
-  </script>
+  <title>サポート窓口 - maki matsumoto</title>
   <style>
+    :root {
+      --bg-color: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-sub: #334155;
+      --text-muted: #64748B;
+      --primary: #0284C7;
+      --primary-hover: #0369A1;
+      --border: #E2E8F0;
+      --badge-bg: #F1F5F9;
+      --badge-text: #475569;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
+      background-color: var(--bg-color);
       margin: 0;
-      color: #333;
-      text-align: center;
-      padding: 20px;
+      padding: 32px 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 40px 32px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
+    }
+    .header-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      background: #E0F2FE;
+      color: #0369A1;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .intro {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 32px;
+    }
+    .section-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 14px 0;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    p, li {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin: 8px 0;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .contact-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .contact-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .contact-label {
+      width: 140px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .contact-val {
+      flex: 1;
+      min-width: 240px;
     }
     a {
-      color: #0070c9;
+      color: var(--primary);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
     }
     a:hover {
+      color: var(--primary-hover);
       text-decoration: underline;
+    }
+    .btn-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #FFFFFF !important;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: background 0.15s ease;
+    }
+    .btn-link:hover {
+      background: var(--primary-hover);
+      text-decoration: none;
+    }
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .app-item {
+      padding: 12px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    .app-category {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 8px;
+      }
+      .container {
+        padding: 24px 18px;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      .contact-label {
+        width: 100%;
+        margin-bottom: 4px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Maki Works</h1>
-  <p>公式サポート（X / 旧Twitter）へ自動的に移動します...</p>
-  <p>自動で移動しない場合は <a href="https://x.com/makideveloper">こちらをクリックしてください</a>。</p>
+  <div class="container">
+    <div class="header-badge">Application Support</div>
+    <h1>アプリケーション サポート窓口</h1>
+    <p class="intro">
+      maki matsumoto が開発・提供するiOSアプリケーションの公式サポート窓口です。<br>
+      アプリの不具合報告、操作方法に関するご質問、ご意見・ご要望がございましたら、以下の窓口よりお気軽にお問い合わせください。
+    </p>
+
+    <!-- お問い合わせ窓口 -->
+    <div class="section-card">
+      <h2>📬 お問い合わせ窓口</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">開発者名義</span>
+          <span class="contact-val"><strong>maki matsumoto</strong></span>
+        </li>
+        <li>
+          <span class="contact-label">メール窓口</span>
+          <span class="contact-val">
+            <a href="mailto:makiworks.developer@gmail.com">makiworks.developer@gmail.com</a>
+          </span>
+        </li>
+        <li>
+          <span class="contact-label">公式SNS（最新情報）</span>
+          <span class="contact-val">
+            <a href="https://x.com/makideveloper" target="_blank" rel="noopener noreferrer">X（旧Twitter）@makideveloper</a>
+          </span>
+        </li>
+      </ul>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">
+        ※お問い合わせの際は、円滑なご案内のため「<strong>ご利用のアプリ名</strong>」「<strong>端末機種名（iPhone 15等）</strong>」「<strong>iOSバージョン</strong>」「<strong>詳しい状況・エラー内容</strong>」を記載いただけますと幸いです。
+      </p>
+    </div>
+
+    <!-- プライバシーポリシー -->
+    <div class="section-card">
+      <h2>🛡️ プライバシーポリシー</h2>
+      <p>
+        当方が提供する各アプリケーションにおける利用者情報の取扱い、広告SDKの利用、端末内データ保存方針等につきましては、プライバシーポリシーページをご確認ください。
+      </p>
+      <a href="./privacy.html" class="btn-link">プライバシーポリシーを見る →</a>
+    </div>
+
+    <!-- 主な提供アプリケーション -->
+    <div class="section-card">
+      <h2>📱 主な提供アプリケーション</h2>
+      <div class="app-grid">
+        <div class="app-item">
+          ポップ！チェンジ
+          <div class="app-category">パズルゲーム（広告あり）</div>
+        </div>
+        <div class="app-item">
+          ピョンのにんじんキャッチ
+          <div class="app-category">カジュアルアクション（広告あり）</div>
+        </div>
+        <div class="app-item">
+          Color Block Breaker
+          <div class="app-category">ブロック崩しゲーム（完全オフライン）</div>
+        </div>
+        <div class="app-item">
+          パスワード生成
+          <div class="app-category">ユーティリティ（完全オフライン）</div>
+        </div>
+        <div class="app-item">
+          じゃんけんゲーム
+          <div class="app-category">カジュアルゲーム（完全オフライン）</div>
+        </div>
+        <div class="app-item">
+          消費税計算機 / 年齢計算機
+          <div class="app-category">計算ユーティリティ（完全オフライン）</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 maki matsumoto. All rights reserved. | 最終更新: 2026年9月20日
+    </footer>
+  </div>
 </body>
 </html>

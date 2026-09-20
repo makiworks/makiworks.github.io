@@ -3,46 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライバシーポリシー</title>
+  <title>アプリケーション プライバシーポリシー - maki matsumoto</title>
   <style>
     :root {
-      --bg-color: #F9FAFB;
+      --bg-color: #F8FAFC;
       --card-bg: #FFFFFF;
-      --text-main: #1F2937;
-      --text-sub: #4B5563;
-      --text-muted: #6B7280;
-      --primary: #0070c9;
-      --border: #E5E7EB;
+      --text-main: #0F172A;
+      --text-sub: #334155;
+      --text-muted: #64748B;
+      --primary: #0284C7;
+      --primary-hover: #0369A1;
+      --border: #E2E8F0;
+      --badge-bg: #F1F5F9;
+      --badge-text: #475569;
+      --table-header: #F8FAFC;
+    }
+    * {
+      box-sizing: border-box;
     }
     body {
       background-color: var(--bg-color);
       margin: 0;
-      padding: 24px 16px;
+      padding: 32px 16px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
       line-height: 1.8;
       color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
     .privacy-container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 36px 28px;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 40px 32px;
       background: var(--card-bg);
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .nav-bar a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-bar a:hover {
+      text-decoration: underline;
     }
     h1 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--border);
+      margin: 0 0 16px 0;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .lead-text {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 32px;
+      padding: 16px 20px;
+      background: #F0F9FF;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
     }
     h2 {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 600;
-      margin-top: 32px;
-      margin-bottom: 12px;
-      color: #111827;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: var(--text-sub);
     }
     p, li {
       font-size: 15px;
@@ -55,61 +100,248 @@
     li {
       margin-bottom: 8px;
     }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0 24px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: left;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--table-header);
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+    }
+    .badge-no {
+      background: #ECFDF5;
+      color: #047857;
+    }
+    .badge-yes {
+      background: #EFF6FF;
+      color: #1D4ED8;
+    }
     a {
       color: var(--primary);
       text-decoration: none;
+      word-break: break-all;
     }
     a:hover {
+      color: var(--primary-hover);
       text-decoration: underline;
     }
     .privacy-meta {
-      margin-top: 40px;
-      padding-top: 20px;
+      margin-top: 48px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
       font-size: 14px;
       color: var(--text-muted);
+    }
+    .privacy-meta p {
+      margin: 6px 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .contact-box {
+      margin-top: 20px;
+      padding: 18px 20px;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .contact-box p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 8px;
+      }
+      .privacy-container {
+        padding: 24px 18px;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="privacy-container">
+    <div class="nav-bar">
+      <span>maki matsumoto Applications</span>
+      <a href="./index.html">サポートページへ戻る</a>
+    </div>
+
     <h1>アプリケーション プライバシーポリシー</h1>
-    <p>当開発者は、提供するiOSアプリケーション（『ポップ！チェンジ』『ピョンのにんじんキャッチ』等、以下「本アプリ」）における利用者のプライバシーを尊重し、利用者の情報の保護に努めます。</p>
 
-    <h2>1. 端末内に保存される情報</h2>
-    <p>本アプリは、ゲームの進行、スコア記録、ユーザー設定の維持のため、以下の情報を端末内（UserDefaults等）にのみ保存します。これらの情報が外部サーバーへ送信されることはありません。</p>
+    <div class="lead-text">
+      maki matsumoto（以下「運営者」）は、提供するiOSアプリケーション（以下「本アプリ」）における利用者のプライバシーを尊重し、個人情報の保護に最大限努めます。本プライバシーポリシーは、本アプリにおける利用者情報の取扱い方針を定めたものです。
+    </div>
+
+    <h2>1. 運営者情報</h2>
+    <p>
+      <strong>運営者・開発者名義：</strong> maki matsumoto<br>
+      <strong>サポート連絡先：</strong> <a href="mailto:makiworks.developer@gmail.com">makiworks.developer@gmail.com</a><br>
+      <strong>サポート窓口：</strong> <a href="./index.html">サポート案内ページ</a>
+    </p>
+
+    <h2>2. 対象アプリおよび区分</h2>
+    <p>提供するアプリケーションは、機能および通信の有無に応じて以下の2つの区分に分類されます。</p>
+
+    <h3>区分A：広告配信を行うアプリケーション</h3>
     <ul>
-      <li>ゲームのハイスコア・進行状況データ</li>
-      <li>サウンド（BGM・SE）や振動（触覚フィードバック）の設定</li>
+      <li>『ポップ！チェンジ』（Pop! Change）</li>
+      <li>『ピョンのにんじんキャッチ』（Pyon Carrot Catch）</li>
+      <li>その他、アプリ内に広告表示を行うアプリケーション</li>
+    </ul>
+
+    <h3>区分B：完全オフライン・データ収集を行わないアプリケーション</h3>
+    <ul>
+      <li>『Color Block Breaker』</li>
+      <li>『パスワード生成』（GeneratePassword）</li>
+      <li>『じゃんけんゲーム』（JankenPlayGame）</li>
+      <li>『消費税計算機』（TaxCalculator）</li>
+      <li>『年齢計算機』（AgeCalculator）</li>
+      <li>『自由ルーレット』（FreedomRoulette）</li>
+      <li>『ハイ＆ロー』（HighAndLow）</li>
+      <li>『ダイスナンバー』（DiceNumber）</li>
+      <li>『音真似楽器』（OtomaneGakki）</li>
+      <li>その他、広告・外部通信を含まないスタンドアロンアプリケーション</li>
+    </ul>
+
+    <h2>3. 端末内に保存される情報（全アプリ共通）</h2>
+    <p>本アプリは、ゲームの進行、ハイスコア記録、設定内容の保持のため、以下の情報をお使いの端末内（ローカルストレージ：UserDefaults等）にのみ保存します。これらの情報が外部サーバーへ送信されることは一切ありません。</p>
+    <ul>
+      <li>ゲームの進行状況、セーブデータ、スコア・ハイスコア記録</li>
+      <li>サウンド（BGM・SE）やバイブレーション設定</li>
       <li>チュートリアルの閲覧状態</li>
-      <li>広告の表示頻度制御に必要な内部フラグ</li>
+      <li>広告表示頻度の制御に必要な内部フラグ（区分Aアプリのみ）</li>
     </ul>
+    <p>端末内に保存されたデータは、本アプリを端末からアンインストール（削除）することで、OSの機能により自動的かつ完全に消去されます。</p>
 
-    <h2>2. 広告配信および利用状況データの収集について</h2>
-    <p>本アプリでは、無料でのアプリ提供および開発継続のため、第三者広告配信事業者であるGoogle LLCの「Google Mobile Ads SDK」および「Google User Messaging Platform（UMP）SDK」を利用しています。</p>
-    <p>これらのSDKにより、広告配信、不正防止、利用動向分析、診断情報の収集を目的として、以下の情報が自動的に収集・処理される場合があります：</p>
+    <h2>4. 区分A（広告導入アプリ）におけるデータ収集と取扱い</h2>
+    <p>区分Aのアプリケーションでは、無料でのアプリ提供および開発継続のため、第三者広告配信事業者であるGoogle LLCの「Google Mobile Ads SDK」および同意管理基盤「Google User Messaging Platform（UMP）SDK」を利用しています。</p>
+
+    <h3>4.1 収集されるデータと目的</h3>
+    <p>これらのSDKにより、広告の配信・頻度制御、広告効果の測定、利用状況の分析、同意状態の管理を目的として、以下の情報が自動的に収集・処理される場合があります：</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>データ区分</th>
+            <th>具体的な内容</th>
+            <th>収集目的</th>
+            <th>個人紐付け</th>
+            <th>トラッキング</th>
+            <th>送信先</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>識別子</strong></td>
+            <td>端末識別子（Device ID等）</td>
+            <td>サードパーティ広告、分析、広告表示制御</td>
+            <td><span class="badge badge-yes">あり</span></td>
+            <td><span class="badge badge-no">なし</span></td>
+            <td>Google LLC</td>
+          </tr>
+          <tr>
+            <td><strong>位置情報</strong></td>
+            <td>大まかな位置情報（Coarse Location）</td>
+            <td>適切な地域向け広告配信、同意管理（UMP）</td>
+            <td><span class="badge badge-yes">あり</span></td>
+            <td><span class="badge badge-no">なし</span></td>
+            <td>Google LLC</td>
+          </tr>
+          <tr>
+            <td><strong>使用状況データ</strong></td>
+            <td>広告データ、製品の操作履歴</td>
+            <td>広告表示実績、分析、機能性維持</td>
+            <td><span class="badge badge-yes">あり</span></td>
+            <td><span class="badge badge-no">なし</span></td>
+            <td>Google LLC</td>
+          </tr>
+          <tr>
+            <td><strong>診断情報</strong></td>
+            <td>パフォーマンスデータ、その他の診断データ</td>
+            <td>アプリの安定性向上、エラー解析</td>
+            <td><span class="badge badge-no">なし</span></td>
+            <td><span class="badge badge-no">なし</span></td>
+            <td>Google LLC</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4.2 トラッキングの不実施について</h3>
+    <p>本アプリは、利用者の個人情報や行動履歴を他社のサービスと結合して追跡する「トラッキング（Tracking）」を行いません。App Tracking Transparency（ATT）によるIDFA（広告識別子）の明示的取得は行っておらず、データブローカーへの情報提供・販売も一切行いません。</p>
+
+    <h3>4.3 子どもの保護と全年齢向け設定（COPPA対応）</h3>
+    <p>全年齢の利用者が安心してご利用いただけるよう、広告配信においてコンテンツレーティング「G（全年齢対象）」を固定し、児童オンラインプライバシー保護法（COPPA）に準拠した子ども向け処理および非パーソナライズ広告（個人の興味関心に基づかない一般的な広告）を適用しています。</p>
+
+    <h3>4.4 同意の確認と変更（欧州等の地域）</h3>
+    <p>欧州経済領域（EEA）や英国等の対象地域においては、初回起動時にGoogle UMP SDKによる同意確認ダイアログが表示されます。同意の設定は、アプリ内の設定画面または端末の設定よりいつでも確認・変更が可能です。</p>
+
+    <p>Google社による情報の取扱いおよびプライバシーポリシーの詳細は、以下をご確認ください：<br>
+      <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Google 広告に関するポリシーと規約</a><br>
+      <a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener noreferrer">Google プライバシーポリシー</a>
+    </p>
+
+    <h2>5. 区分B（完全オフラインアプリ）におけるデータ取扱い</h2>
+    <p>区分Bのアプリケーションは、利用者のプライバシーを最大限尊重したスタンドアロン設計となっております。</p>
     <ul>
-      <li><strong>端末識別子（Device ID等）：</strong> 広告配信および診断目的</li>
-      <li><strong>大まかな位置情報（Coarse Location）：</strong> 地域に応じた適切な広告配信および同意管理目的</li>
-      <li><strong>使用状況データ（広告データ、製品の操作）：</strong> 広告の表示実績、アプリ内の操作・表示頻度制御目的</li>
-      <li><strong>診断情報（パフォーマンスデータ、クラッシュデータ等）：</strong> アプリの安定性向上およびエラー解析目的</li>
+      <li><strong>外部通信：</strong> 一切行いません（通信処理コード自体が存在しません）。</li>
+      <li><strong>第三者SDK：</strong> 広告SDKやアクセス解析ツール等の外部ライブラリは一切含みません。</li>
+      <li><strong>データの収集：</strong> 運営者はいかなる利用者データも収集・蓄積いたしません（App Store Connect申告：「いいえ、このAppからデータを収集しません」）。</li>
     </ul>
-    <p>当開発者は、全年齢の利用者が安心してご利用いただけるよう、広告配信においてコンテンツレーティング（G区分：全年齢対象）および児童オンラインプライバシー保護法（COPPA）に準拠した設定（子ども向け処理）を適用しています。また、独自の個人特定（氏名、メールアドレス、電話番号等）やアプリをまたぐ追跡（トラッキング）は行っておりません。</p>
-    <p>Google社による情報の取り扱いおよびプライバシーポリシーの詳細については、以下をご確認ください：<br>
-    <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer">Google 広告に関するポリシーと規約</a></p>
+    <p>完全なオフライン環境で安心してご利用いただけます。</p>
 
-    <h2>3. 個人情報の第三者提供</h2>
-    <p>当開発者は、上記に定める広告配信およびSDKによる正当な処理を除き、利用者の個人情報を事前の同意なく第三者に提供・開示することはありません。</p>
+    <h2>6. 個人情報の第三者提供・自社サーバー送信について</h2>
+    <p>運営者は、利用者データを収集・蓄積する独自の自社サーバーやクラウドデータベースを保有しておりません。法令に基づく開示要請がある場合を除き、利用者の事前の同意なく個人情報を第三者に提供・開示することはありません。</p>
 
-    <h2>4. プライバシーポリシーの改定</h2>
-    <p>当開発者は、法令の変更、機能の追加、SDKの仕様変更等に伴い、本プライバシーポリシーを改定することがあります。改定後のポリシーは、本ページへの掲載をもって効力を生じるものとします。</p>
+    <h2>7. プライバシーポリシーの改定</h2>
+    <p>運営者は、法令の変更、アプリケーションの機能追加、SDKの仕様改定等に伴い、本プライバシーポリシーを改定することがあります。改定後のポリシーは、本ページへの掲載をもって効力を生じるものとします。</p>
 
-    <h2>5. お問い合わせ窓口</h2>
-    <p>本プライバシーポリシーまたは本アプリに関するご質問・お問い合わせは、以下よりご連絡ください。</p>
+    <h2>8. お問い合わせ窓口</h2>
+    <p>本プライバシーポリシーまたは本アプリにおけるデータの取扱いに関するご質問、お問い合わせは、以下のお問い合わせ先までメールにてご連絡ください。</p>
+
+    <div class="contact-box">
+      <p><strong>開発者・運営者：</strong> maki matsumoto</p>
+      <p><strong>サポートメールアドレス：</strong> <a href="mailto:makiworks.developer@gmail.com">makiworks.developer@gmail.com</a></p>
+      <p><strong>サポート案内ページ：</strong> <a href="./index.html">https://makiworks.github.io/</a></p>
+      <p><strong>公式SNS（最新情報）：</strong> <a href="https://x.com/makideveloper" target="_blank" rel="noopener noreferrer">X（旧Twitter）@makideveloper</a></p>
+    </div>
+
     <div class="privacy-meta">
-      <p><strong>公式サポート（X / 旧Twitter）：</strong> <a href="https://x.com/makideveloper" target="_blank" rel="noopener noreferrer">@makideveloper</a></p>
-      <p><strong>制定日：</strong> 2026年9月12日<br>
-      <strong>最終改定日：</strong> 2026年9月17日</p>
+      <p><strong>制定日：</strong> 2026年9月12日</p>
+      <p><strong>最終改定日：</strong> 2026年9月20日</p>
     </div>
   </div>
 </body>
