@@ -263,10 +263,6 @@
             <a href="mailto:makiworks.developer@gmail.com">makiworks.developer@gmail.com</a>
           </span>
         </li>
-        <li>
-          <span class="contact-label">対応時間</span>
-          <span class="contact-val">平日 9:00 - 18:00（順次ご返信いたします）</span>
-        </li>
       </ul>
       <p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">
         ※お問い合わせの際は、円滑な対応のため「<strong>施設名（園名）</strong>」「<strong>ご担当者様氏名</strong>」「<strong>端末種別（iPad Pro等）・iPadOSバージョン</strong>」「<strong>詳しい状況・エラー内容</strong>」を記載いただけますと幸いです。
@@ -287,28 +283,28 @@
       <h2>🌲 システムの主な特長</h2>
       <div class="feature-grid">
         <div class="feature-item">
-          <strong>iPadワンタップ打刻</strong>
-          職員一覧から名前を選んでタップするだけの簡単打刻。出勤・退勤・複数勤務に対応。
+          <strong>iPadで簡単打刻</strong>
+          職員一覧から先生の名前を選んでタップするだけで、日々の出勤・退勤をスムーズに記録。
         </div>
         <div class="feature-item">
-          <strong>給食注文・検食記録</strong>
-          打刻と同時に当日の給食の有無や検食実績を記録。発注数の集計漏れを防止。
+          <strong>退勤時の給食記録</strong>
+          退勤打刻時に「給食を食べましたか？（食べた／食べてない）」を選択し、給食数を正確にカウント。
+        </div>
+        <div class="feature-item">
+          <strong>当日の出退勤状況の確認</strong>
+          iPadアプリ内の「今日の記録」から、当日の先生方の出勤・退勤時刻を一覧で確認可能。
         </div>
         <div class="feature-item">
           <strong>Web管理画面リアルタイム集計</strong>
-          PCやタブレットのブラウザから最新の勤怠状況を確認。勤務時間の自動集計や修正も可能。
+          PC等のブラウザから、勤務日数・有休日数・欠勤日数・月合計勤務時間・給食数を自動集計。
+        </div>
+        <div class="feature-item">
+          <strong>勤怠データの個別修正</strong>
+          管理画面の専用モーダルから、出退勤時刻、勤務区分（通常出勤・有休・半休・公休・欠勤・休園）、複数勤務を修正可能。
         </div>
         <div class="feature-item">
           <strong>出勤簿PDF・CSV出力</strong>
-          月末の月次集計、A4横出勤簿のワンクリックPDF帳票印刷、給与計算用CSV出力に対応。
-        </div>
-        <div class="feature-item">
-          <strong>広告なし・セキュア設計</strong>
-          施設業務に集中できる広告・トラッキング完全非搭載設計。専用クラウドで安全に隔離保管。
-        </div>
-        <div class="feature-item">
-          <strong>障害時救済モード</strong>
-          万が一のネットワーク障害時にも、手書きやExcel等からの安全な差分取込機能を保持。
+          月末の月次出勤簿をワンクリックでA4横PDF帳票として出力・印刷できるほか、CSV出力にも対応。
         </div>
       </div>
     </div>
@@ -320,28 +316,28 @@
       <div class="faq-item">
         <div class="faq-q">打刻時間を押し忘れたり、誤って打刻した場合はどうすればよいですか？</div>
         <div class="faq-a">
-          施設管理者様向けのWeb管理画面（`admin.html`）より、対象職員の該当日付の打刻時刻、勤務区分（通常出勤・有休・半休・公休・欠勤等）、給食フラグを直接修正いただけます。
+          施設管理者様向けのWeb管理画面より、対象職員の該当日付にある緑色の「修正」ボタンから、出退勤時刻や勤務区分（通常出勤・有休・半休・公休・欠勤・休園）を直接修正・保存いただけます。
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">1日に複数回勤務（中抜けや延長保育対応）がある場合は対応できますか？</div>
+        <div class="faq-q">退勤時の給食の選択（食べた／食べてない）を押し間違えた場合は？</div>
         <div class="faq-a">
-          はい、対応しております。iPadアプリおよびWeb管理画面において、同一日内の第1勤務・第2勤務の複数打刻および勤務時間の合算集計が可能です。
+          Web管理画面の該当日付にある「修正」ボタンより、給食の有無（○／×）を後から修正いただけます。
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">職員の入職や退職があった場合、どのように登録しますか？</div>
+        <div class="faq-q">1日に2回以上の勤務（中抜け等）がある場合はどのように記録しますか？</div>
         <div class="faq-a">
-          管理者専用のWeb管理画面より職員マスターの追加・在籍ステータスの変更を行うことで、iPad打刻アプリへ即座に反映されます。
+          iPadアプリでの打刻は1日1回の出退勤記録となります。1日に複数回の勤務が発生した場合は、Web管理画面の修正画面より「勤務を追加」していただくことで、第2勤務〜第4勤務の時間を登録・合算集計いただけます。
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">通信が一時的に途切れた場合はどうなりますか？</div>
+        <div class="faq-q">月末の出勤簿の印刷やデータ出力はどこから行いますか？</div>
         <div class="faq-a">
-          Wi-Fi等の接続が回復次第、自動的にクラウドへ同期されます。また、万が一の長時間ネットワーク障害に備え、非常用Excel等による一時記録と復旧後の安全な差分自動取込機能も備えています。
+          Web管理画面の上部にある「PDF出力」ボタンから月別の出勤簿を印刷用PDFとしてダウンロードいただけます。また、「全員まとめCSV」「個人CSV一括」ボタンよりCSV形式でのデータ保存も可能です。
         </div>
       </div>
     </div>
