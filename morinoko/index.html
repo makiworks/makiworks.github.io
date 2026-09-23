@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>もりのこタイムカード 公式サポート窓口 - maki matsumoto</title>
+  <style>
+    :root {
+      --bg-color: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-sub: #334155;
+      --text-muted: #64748B;
+      --primary: #059669;
+      --primary-hover: #047857;
+      --primary-light: #ECFDF5;
+      --primary-border: #A7F3D0;
+      --border: #E2E8F0;
+      --badge-bg: #F1F5F9;
+      --badge-text: #475569;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 32px 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 40px 32px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .header-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      background: var(--primary-light);
+      color: var(--primary-hover);
+      border: 1px solid var(--primary-border);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .intro {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 32px;
+    }
+    .section-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 14px 0;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 16px 0 6px 0;
+      color: var(--text-main);
+    }
+    p, li {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin: 8px 0;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .contact-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .contact-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .contact-label {
+      width: 140px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .contact-val {
+      flex: 1;
+      min-width: 240px;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+    .btn-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #FFFFFF !important;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: background 0.15s ease;
+    }
+    .btn-link:hover {
+      background: var(--primary-hover);
+      text-decoration: none;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .feature-item {
+      padding: 14px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+    .feature-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-hover);
+    }
+    .faq-item {
+      padding: 14px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .faq-q::before {
+      content: "Q.";
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .faq-a {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .faq-a::before {
+      content: "A.";
+      color: #0284C7;
+      font-weight: 700;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 8px;
+      }
+      .container {
+        padding: 24px 18px;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      .contact-label {
+        width: 100%;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-bar">
+      <span>maki matsumoto Systems</span>
+      <a href="../index.html">← Maki Works サポート総合トップ</a>
+    </div>
+
+    <div class="header-badge">保育施設向け iPad勤怠管理システム</div>
+    <h1>『もりのこタイムカード』公式サポート窓口</h1>
+    <p class="intro">
+      maki matsumoto が開発・提供する保育施設向け勤怠管理システム『<strong>もりのこタイムカード</strong>』（iPadアプリ／Web管理画面）の公式サポート窓口です。<br>
+      現場でのiPad打刻アプリの操作方法、Web管理画面での集計・修正・出勤簿印刷、不具合報告やご要望がございましたら、以下の窓口よりお気軽にお問い合わせください。
+    </p>
+
+    <!-- お問い合わせ窓口 -->
+    <div class="section-card">
+      <h2>📬 お問い合わせ窓口</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">開発・提供者</span>
+          <span class="contact-val"><strong>maki matsumoto</strong>（Maki Works）</span>
+        </li>
+        <li>
+          <span class="contact-label">サポート窓口</span>
+          <span class="contact-val">
+            <a href="mailto:makiworks.developer@gmail.com">makiworks.developer@gmail.com</a>
+          </span>
+        </li>
+        <li>
+          <span class="contact-label">対応時間</span>
+          <span class="contact-val">平日 9:00 - 18:00（順次ご返信いたします）</span>
+        </li>
+      </ul>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">
+        ※お問い合わせの際は、円滑な対応のため「<strong>施設名（園名）</strong>」「<strong>ご担当者様氏名</strong>」「<strong>端末種別（iPad Pro等）・iPadOSバージョン</strong>」「<strong>詳しい状況・エラー内容</strong>」を記載いただけますと幸いです。
+      </p>
+    </div>
+
+    <!-- プライバシーポリシー -->
+    <div class="section-card">
+      <h2>🛡️ プライバシーポリシー</h2>
+      <p>
+        『もりのこタイムカード』における職員個人情報、勤務実績データの保護方針、安全管理措置等につきましては、専用プライバシーポリシーをご確認ください。
+      </p>
+      <a href="./privacy.html" class="btn-link">『もりのこタイムカード』プライバシーポリシーを見る →</a>
+    </div>
+
+    <!-- システムの主な特長 -->
+    <div class="section-card">
+      <h2>🌲 システムの主な特長</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <strong>iPadワンタップ打刻</strong>
+          職員一覧から名前を選んでタップするだけの簡単打刻。出勤・退勤・複数勤務に対応。
+        </div>
+        <div class="feature-item">
+          <strong>給食注文・検食記録</strong>
+          打刻と同時に当日の給食の有無や検食実績を記録。発注数の集計漏れを防止。
+        </div>
+        <div class="feature-item">
+          <strong>Web管理画面リアルタイム集計</strong>
+          PCやタブレットのブラウザから最新の勤怠状況を確認。勤務時間の自動集計や修正も可能。
+        </div>
+        <div class="feature-item">
+          <strong>出勤簿PDF・CSV出力</strong>
+          月末の月次集計、A4横出勤簿のワンクリックPDF帳票印刷、給与計算用CSV出力に対応。
+        </div>
+        <div class="feature-item">
+          <strong>広告なし・セキュア設計</strong>
+          施設業務に集中できる広告・トラッキング完全非搭載設計。専用クラウドで安全に隔離保管。
+        </div>
+        <div class="feature-item">
+          <strong>障害時救済モード</strong>
+          万が一のネットワーク障害時にも、手書きやExcel等からの安全な差分取込機能を保持。
+        </div>
+      </div>
+    </div>
+
+    <!-- よくあるご質問（FAQ） -->
+    <div class="section-card">
+      <h2>❓ よくあるご質問（FAQ）</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">打刻時間を押し忘れたり、誤って打刻した場合はどうすればよいですか？</div>
+        <div class="faq-a">
+          施設管理者様向けのWeb管理画面（`admin.html`）より、対象職員の該当日付の打刻時刻、勤務区分（通常出勤・有休・半休・公休・欠勤等）、給食フラグを直接修正いただけます。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">1日に複数回勤務（中抜けや延長保育対応）がある場合は対応できますか？</div>
+        <div class="faq-a">
+          はい、対応しております。iPadアプリおよびWeb管理画面において、同一日内の第1勤務・第2勤務の複数打刻および勤務時間の合算集計が可能です。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">職員の入職や退職があった場合、どのように登録しますか？</div>
+        <div class="faq-a">
+          管理者専用のWeb管理画面より職員マスターの追加・在籍ステータスの変更を行うことで、iPad打刻アプリへ即座に反映されます。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">通信が一時的に途切れた場合はどうなりますか？</div>
+        <div class="faq-a">
+          Wi-Fi等の接続が回復次第、自動的にクラウドへ同期されます。また、万が一の長時間ネットワーク障害に備え、非常用Excel等による一時記録と復旧後の安全な差分自動取込機能も備えています。
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 maki matsumoto. All rights reserved. | 最終更新: 2026年9月23日
+    </footer>
+  </div>
+</body>
+</html>
